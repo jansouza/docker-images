@@ -1,0 +1,1821 @@
+
+{
+    "base": {
+        "classloader.loadedClasses.count": {
+            "unit": "none",
+            "type": "gauge",
+            "description": "Displays the number of classes that are currently loaded in the Java virtual machine.",
+            "displayName": "Current Loaded Class Count",
+            "tags": [
+                [
+                ]
+            ]
+        },
+        "classloader.loadedClasses.total": {
+            "unit": "none",
+            "type": "counter",
+            "description": "Displays the total number of classes that have been loaded since the Java virtual machine has started execution.",
+            "displayName": "Total Loaded Class Count",
+            "tags": [
+                [
+                ]
+            ]
+        },
+        "classloader.unloadedClasses.total": {
+            "unit": "none",
+            "type": "counter",
+            "description": "Displays the total number of classes unloaded since the Java virtual machine has started execution.",
+            "displayName": "Total Unloaded Class Count",
+            "tags": [
+                [
+                ]
+            ]
+        },
+        "cpu.availableProcessors": {
+            "unit": "none",
+            "type": "gauge",
+            "description": "Displays the number of processors available to the Java virtual machine. This value may change during a particular invocation of the virtual machine.",
+            "displayName": "Available Processors",
+            "tags": [
+                [
+                ]
+            ]
+        },
+        "cpu.processCpuLoad": {
+            "unit": "none",
+            "type": "gauge",
+            "description": "Displays the \"recent cpu usage\" for the Java Virtual Machine process.",
+            "displayName": "Process CPU Load",
+            "tags": [
+                [
+                ]
+            ]
+        },
+        "cpu.processCpuTime": {
+            "unit": "nanoseconds",
+            "type": "gauge",
+            "description": "Displays the CPU time used by the process on which the Java virtual machine is running in nanoseconds",
+            "displayName": "Process CPU Time",
+            "tags": [
+                [
+                ]
+            ]
+        },
+        "cpu.systemLoadAverage": {
+            "unit": "none",
+            "type": "gauge",
+            "description": "Displays the system load average for the last minute. The system load average is the sum of the number of runnable entities queued to the available processors and the number of runnable entities running on the available processors averaged over a period of time. The way in which the load average is calculated is operating system specific but is typically a damped time-dependent average. If the load average is not available, a negative value is displayed. This attribute is designed to provide a hint about the system load and may be queried frequently. The load average may be unavailable on some platform where it is expensive to implement this method.",
+            "displayName": "System Load Average",
+            "tags": [
+                [
+                ]
+            ]
+        },
+        "gc.time": {
+            "unit": "milliseconds",
+            "type": "counter",
+            "description": "Displays the approximate accumulated collection elapsed time in milliseconds. This attribute displays -1 if the collection elapsed time is undefined for this collector. The Java virtual machine implementation may use a high resolution timer to measure the elapsed time. This attribute may display the same value even if the collection count has been incremented if the collection elapsed time is very short.",
+            "displayName": "Garbage Collection Time",
+            "tags": [
+                [
+                    "name=Copy1"
+                ],
+                [
+                    "name=MarkSweepCompact1"
+                ]
+            ]
+        },
+        "gc.total": {
+            "unit": "none",
+            "type": "counter",
+            "description": "Displays the total number of collections that have occurred. This attribute lists -1 if the collection count is undefined for this collector.",
+            "displayName": "Garbage Collection Count",
+            "tags": [
+                [
+                    "name=Copy1"
+                ],
+                [
+                    "name=MarkSweepCompact1"
+                ]
+            ]
+        },
+        "jvm.uptime": {
+            "unit": "milliseconds",
+            "type": "gauge",
+            "description": "Displays the uptime of the Java virtual machine",
+            "displayName": "JVM Uptime",
+            "tags": [
+                [
+                ]
+            ]
+        },
+        "memory.committedHeap": {
+            "unit": "bytes",
+            "type": "gauge",
+            "description": "Displays the amount of memory that is committed for the Java virtual machine to use.",
+            "displayName": "Committed Heap Memory",
+            "tags": [
+                [
+                ]
+            ]
+        },
+        "memory.committedNonHeap": {
+            "unit": "bytes",
+            "type": "gauge",
+            "description": "Displays the amount of memory that is committed for the Java virtual machine to use.",
+            "displayName": "Committed Non Heap Memory",
+            "tags": [
+                [
+                ]
+            ]
+        },
+        "memory.maxHeap": {
+            "unit": "bytes",
+            "type": "gauge",
+            "description": "Displays the maximum amount of memory in bytes that can be used for memory management.",
+            "displayName": "Max Heap Memory",
+            "tags": [
+                [
+                ]
+            ]
+        },
+        "memory.maxNonHeap": {
+            "unit": "bytes",
+            "type": "gauge",
+            "description": "Displays the maximum amount of memory in bytes that can be used for memory management.",
+            "displayName": "Max Non Heap Memory",
+            "tags": [
+                [
+                ]
+            ]
+        },
+        "memory.usedHeap": {
+            "unit": "bytes",
+            "type": "gauge",
+            "description": "Displays the amount of used memory.",
+            "displayName": "Used Heap Memory",
+            "tags": [
+                [
+                ]
+            ]
+        },
+        "memory.usedNonHeap": {
+            "unit": "bytes",
+            "type": "gauge",
+            "description": "Displays the amount of used memory.",
+            "displayName": "Used Non Heap Memory",
+            "tags": [
+                [
+                ]
+            ]
+        },
+        "thread.count": {
+            "unit": "none",
+            "type": "gauge",
+            "description": "Number of currently deployed threads",
+            "displayName": "Current Thread count",
+            "tags": [
+                [
+                ]
+            ]
+        },
+        "thread.daemon.count": {
+            "unit": "none",
+            "type": "gauge",
+            "description": "Displays the current number of live daemon threads.",
+            "displayName": "Daemon Thread Count",
+            "tags": [
+                [
+                ]
+            ]
+        },
+        "thread.max.count": {
+            "unit": "none",
+            "type": "gauge",
+            "description": "Displays the peak live thread count since the Java virtual machine started or peak was reset. This includes daemon and non-daemon threads.",
+            "displayName": "Peak Thread Count",
+            "tags": [
+                [
+                ]
+            ]
+        }
+    },
+    "vendor": {
+        "BufferPool_used_memory_direct": {
+            "unit": "bytes",
+            "type": "gauge",
+            "description": "The memory used by the NIO pool: direct",
+            "displayName": "BufferPool_used_memory_direct",
+            "tags": [
+                [
+                ]
+            ]
+        },
+        "BufferPool_used_memory_mapped": {
+            "unit": "bytes",
+            "type": "gauge",
+            "description": "The memory used by the NIO pool: mapped",
+            "displayName": "BufferPool_used_memory_mapped",
+            "tags": [
+                [
+                ]
+            ]
+        },
+        "memoryPool.Code Cache.usage": {
+            "unit": "bytes",
+            "type": "gauge",
+            "description": "Current usage of the Code Cache memory pool",
+            "displayName": "memoryPool.Code Cache.usage",
+            "tags": [
+                [
+                ]
+            ]
+        },
+        "memoryPool.Code Cache.usage.max": {
+            "unit": "bytes",
+            "type": "gauge",
+            "description": "Peak usage of the Code Cache memory pool",
+            "displayName": "memoryPool.Code Cache.usage.max",
+            "tags": [
+                [
+                ]
+            ]
+        },
+        "memoryPool.Compressed Class Space.usage": {
+            "unit": "bytes",
+            "type": "gauge",
+            "description": "Current usage of the Compressed Class Space memory pool",
+            "displayName": "memoryPool.Compressed Class Space.usage",
+            "tags": [
+                [
+                ]
+            ]
+        },
+        "memoryPool.Compressed Class Space.usage.max": {
+            "unit": "bytes",
+            "type": "gauge",
+            "description": "Peak usage of the Compressed Class Space memory pool",
+            "displayName": "memoryPool.Compressed Class Space.usage.max",
+            "tags": [
+                [
+                ]
+            ]
+        },
+        "memoryPool.Eden Space.usage": {
+            "unit": "bytes",
+            "type": "gauge",
+            "description": "Current usage of the Eden Space memory pool",
+            "displayName": "memoryPool.Eden Space.usage",
+            "tags": [
+                [
+                ]
+            ]
+        },
+        "memoryPool.Eden Space.usage.max": {
+            "unit": "bytes",
+            "type": "gauge",
+            "description": "Peak usage of the Eden Space memory pool",
+            "displayName": "memoryPool.Eden Space.usage.max",
+            "tags": [
+                [
+                ]
+            ]
+        },
+        "memoryPool.Metaspace.usage": {
+            "unit": "bytes",
+            "type": "gauge",
+            "description": "Current usage of the Metaspace memory pool",
+            "displayName": "memoryPool.Metaspace.usage",
+            "tags": [
+                [
+                ]
+            ]
+        },
+        "memoryPool.Metaspace.usage.max": {
+            "unit": "bytes",
+            "type": "gauge",
+            "description": "Peak usage of the Metaspace memory pool",
+            "displayName": "memoryPool.Metaspace.usage.max",
+            "tags": [
+                [
+                ]
+            ]
+        },
+        "memoryPool.Survivor Space.usage": {
+            "unit": "bytes",
+            "type": "gauge",
+            "description": "Current usage of the Survivor Space memory pool",
+            "displayName": "memoryPool.Survivor Space.usage",
+            "tags": [
+                [
+                ]
+            ]
+        },
+        "memoryPool.Survivor Space.usage.max": {
+            "unit": "bytes",
+            "type": "gauge",
+            "description": "Peak usage of the Survivor Space memory pool",
+            "displayName": "memoryPool.Survivor Space.usage.max",
+            "tags": [
+                [
+                ]
+            ]
+        },
+        "memoryPool.Tenured Gen.usage": {
+            "unit": "bytes",
+            "type": "gauge",
+            "description": "Current usage of the Tenured Gen memory pool",
+            "displayName": "memoryPool.Tenured Gen.usage",
+            "tags": [
+                [
+                ]
+            ]
+        },
+        "memoryPool.Tenured Gen.usage.max": {
+            "unit": "bytes",
+            "type": "gauge",
+            "description": "Peak usage of the Tenured Gen memory pool",
+            "displayName": "memoryPool.Tenured Gen.usage.max",
+            "tags": [
+                [
+                ]
+            ]
+        },
+        "wildfly_batch_jberet_active_count": {
+            "unit": "none",
+            "type": "gauge",
+            "description": "The approximate number of threads that are actively executing tasks.",
+            "displayName": "wildfly_batch_jberet_active_count",
+            "tags": [
+                [
+                    "thread_pool=batch"
+                ]
+            ]
+        },
+        "wildfly_batch_jberet_completed_task_count": {
+            "unit": "none",
+            "type": "gauge",
+            "description": "The approximate total number of tasks that have completed execution.",
+            "displayName": "wildfly_batch_jberet_completed_task_count",
+            "tags": [
+                [
+                    "thread_pool=batch"
+                ]
+            ]
+        },
+        "wildfly_batch_jberet_current_thread_count": {
+            "unit": "none",
+            "type": "gauge",
+            "description": "The current number of threads in the pool.",
+            "displayName": "wildfly_batch_jberet_current_thread_count",
+            "tags": [
+                [
+                    "thread_pool=batch"
+                ]
+            ]
+        },
+        "wildfly_batch_jberet_largest_thread_count": {
+            "unit": "none",
+            "type": "gauge",
+            "description": "The largest number of threads that have ever simultaneously been in the pool.",
+            "displayName": "wildfly_batch_jberet_largest_thread_count",
+            "tags": [
+                [
+                    "thread_pool=batch"
+                ]
+            ]
+        },
+        "wildfly_batch_jberet_queue_size": {
+            "unit": "none",
+            "type": "gauge",
+            "description": "The queue size.",
+            "displayName": "wildfly_batch_jberet_queue_size",
+            "tags": [
+                [
+                    "thread_pool=batch"
+                ]
+            ]
+        },
+        "wildfly_batch_jberet_rejected_count": {
+            "unit": "none",
+            "type": "gauge",
+            "description": "The number of tasks that have been rejected.",
+            "displayName": "wildfly_batch_jberet_rejected_count",
+            "tags": [
+                [
+                    "thread_pool=batch"
+                ]
+            ]
+        },
+        "wildfly_batch_jberet_task_count": {
+            "unit": "none",
+            "type": "gauge",
+            "description": "The approximate total number of tasks that have ever been scheduled for execution.",
+            "displayName": "wildfly_batch_jberet_task_count",
+            "tags": [
+                [
+                    "thread_pool=batch"
+                ]
+            ]
+        },
+        "wildfly_datasources_jdbc_prepared_statement_cache_access_count": {
+            "unit": "none",
+            "type": "gauge",
+            "description": "The number of times that the statement cache was accessed",
+            "displayName": "wildfly_datasources_jdbc_prepared_statement_cache_access_count",
+            "tags": [
+                [
+                    "data_source=ExampleDS"
+                ]
+            ]
+        },
+        "wildfly_datasources_jdbc_prepared_statement_cache_add_count": {
+            "unit": "none",
+            "type": "gauge",
+            "description": "The number of statements added to the statement cache",
+            "displayName": "wildfly_datasources_jdbc_prepared_statement_cache_add_count",
+            "tags": [
+                [
+                    "data_source=ExampleDS"
+                ]
+            ]
+        },
+        "wildfly_datasources_jdbc_prepared_statement_cache_current_size": {
+            "unit": "none",
+            "type": "gauge",
+            "description": "The number of prepared and callable statements currently cached in the statement cache",
+            "displayName": "wildfly_datasources_jdbc_prepared_statement_cache_current_size",
+            "tags": [
+                [
+                    "data_source=ExampleDS"
+                ]
+            ]
+        },
+        "wildfly_datasources_jdbc_prepared_statement_cache_delete_count": {
+            "unit": "none",
+            "type": "gauge",
+            "description": "The number of statements discarded from the cache",
+            "displayName": "wildfly_datasources_jdbc_prepared_statement_cache_delete_count",
+            "tags": [
+                [
+                    "data_source=ExampleDS"
+                ]
+            ]
+        },
+        "wildfly_datasources_jdbc_prepared_statement_cache_hit_count": {
+            "unit": "none",
+            "type": "gauge",
+            "description": "The number of times that statements from the cache were used",
+            "displayName": "wildfly_datasources_jdbc_prepared_statement_cache_hit_count",
+            "tags": [
+                [
+                    "data_source=ExampleDS"
+                ]
+            ]
+        },
+        "wildfly_datasources_jdbc_prepared_statement_cache_miss_count": {
+            "unit": "none",
+            "type": "gauge",
+            "description": "The number of times that a statement request could not be satisfied with a statement from the cache",
+            "displayName": "wildfly_datasources_jdbc_prepared_statement_cache_miss_count",
+            "tags": [
+                [
+                    "data_source=ExampleDS"
+                ]
+            ]
+        },
+        "wildfly_datasources_pool_active_count": {
+            "unit": "none",
+            "type": "gauge",
+            "description": "The active count",
+            "displayName": "wildfly_datasources_pool_active_count",
+            "tags": [
+                [
+                    "data_source=ExampleDS"
+                ]
+            ]
+        },
+        "wildfly_datasources_pool_available_count": {
+            "unit": "none",
+            "type": "gauge",
+            "description": "The available count",
+            "displayName": "wildfly_datasources_pool_available_count",
+            "tags": [
+                [
+                    "data_source=ExampleDS"
+                ]
+            ]
+        },
+        "wildfly_datasources_pool_average_blocking_time": {
+            "unit": "none",
+            "type": "gauge",
+            "description": "Average Blocking Time for pool",
+            "displayName": "wildfly_datasources_pool_average_blocking_time",
+            "tags": [
+                [
+                    "data_source=ExampleDS"
+                ]
+            ]
+        },
+        "wildfly_datasources_pool_average_creation_time": {
+            "unit": "none",
+            "type": "gauge",
+            "description": "The average time spent creating a physical connection",
+            "displayName": "wildfly_datasources_pool_average_creation_time",
+            "tags": [
+                [
+                    "data_source=ExampleDS"
+                ]
+            ]
+        },
+        "wildfly_datasources_pool_average_get_time": {
+            "unit": "none",
+            "type": "gauge",
+            "description": "The average time spent obtaining a physical connection",
+            "displayName": "wildfly_datasources_pool_average_get_time",
+            "tags": [
+                [
+                    "data_source=ExampleDS"
+                ]
+            ]
+        },
+        "wildfly_datasources_pool_average_pool_time": {
+            "unit": "none",
+            "type": "gauge",
+            "description": "The average time for a physical connection spent in the pool",
+            "displayName": "wildfly_datasources_pool_average_pool_time",
+            "tags": [
+                [
+                    "data_source=ExampleDS"
+                ]
+            ]
+        },
+        "wildfly_datasources_pool_average_usage_time": {
+            "unit": "none",
+            "type": "gauge",
+            "description": "The average time spent using a physical connection",
+            "displayName": "wildfly_datasources_pool_average_usage_time",
+            "tags": [
+                [
+                    "data_source=ExampleDS"
+                ]
+            ]
+        },
+        "wildfly_datasources_pool_blocking_failure_count": {
+            "unit": "none",
+            "type": "gauge",
+            "description": "The number of failures trying to obtain a physical connection",
+            "displayName": "wildfly_datasources_pool_blocking_failure_count",
+            "tags": [
+                [
+                    "data_source=ExampleDS"
+                ]
+            ]
+        },
+        "wildfly_datasources_pool_created_count": {
+            "unit": "none",
+            "type": "gauge",
+            "description": "The created count",
+            "displayName": "wildfly_datasources_pool_created_count",
+            "tags": [
+                [
+                    "data_source=ExampleDS"
+                ]
+            ]
+        },
+        "wildfly_datasources_pool_destroyed_count": {
+            "unit": "none",
+            "type": "gauge",
+            "description": "The destroyed count",
+            "displayName": "wildfly_datasources_pool_destroyed_count",
+            "tags": [
+                [
+                    "data_source=ExampleDS"
+                ]
+            ]
+        },
+        "wildfly_datasources_pool_idle_count": {
+            "unit": "none",
+            "type": "gauge",
+            "description": "The number of physical connections currently idle",
+            "displayName": "wildfly_datasources_pool_idle_count",
+            "tags": [
+                [
+                    "data_source=ExampleDS"
+                ]
+            ]
+        },
+        "wildfly_datasources_pool_in_use_count": {
+            "unit": "none",
+            "type": "gauge",
+            "description": "The number of physical connections currently in use",
+            "displayName": "wildfly_datasources_pool_in_use_count",
+            "tags": [
+                [
+                    "data_source=ExampleDS"
+                ]
+            ]
+        },
+        "wildfly_datasources_pool_max_creation_time": {
+            "unit": "none",
+            "type": "gauge",
+            "description": "The maximum time for creating a physical connection",
+            "displayName": "wildfly_datasources_pool_max_creation_time",
+            "tags": [
+                [
+                    "data_source=ExampleDS"
+                ]
+            ]
+        },
+        "wildfly_datasources_pool_max_get_time": {
+            "unit": "none",
+            "type": "gauge",
+            "description": "The maximum time for obtaining a physical connection",
+            "displayName": "wildfly_datasources_pool_max_get_time",
+            "tags": [
+                [
+                    "data_source=ExampleDS"
+                ]
+            ]
+        },
+        "wildfly_datasources_pool_max_pool_time": {
+            "unit": "none",
+            "type": "gauge",
+            "description": "The maximum time for a physical connection in the pool",
+            "displayName": "wildfly_datasources_pool_max_pool_time",
+            "tags": [
+                [
+                    "data_source=ExampleDS"
+                ]
+            ]
+        },
+        "wildfly_datasources_pool_max_usage_time": {
+            "unit": "none",
+            "type": "gauge",
+            "description": "The maximum time using a physical connection",
+            "displayName": "wildfly_datasources_pool_max_usage_time",
+            "tags": [
+                [
+                    "data_source=ExampleDS"
+                ]
+            ]
+        },
+        "wildfly_datasources_pool_max_used_count": {
+            "unit": "none",
+            "type": "gauge",
+            "description": "The maximum number of connections used",
+            "displayName": "wildfly_datasources_pool_max_used_count",
+            "tags": [
+                [
+                    "data_source=ExampleDS"
+                ]
+            ]
+        },
+        "wildfly_datasources_pool_max_wait_count": {
+            "unit": "none",
+            "type": "gauge",
+            "description": "The maximum number of threads waiting for a connection",
+            "displayName": "wildfly_datasources_pool_max_wait_count",
+            "tags": [
+                [
+                    "data_source=ExampleDS"
+                ]
+            ]
+        },
+        "wildfly_datasources_pool_max_wait_time": {
+            "unit": "none",
+            "type": "gauge",
+            "description": "The maximum wait time for a connection",
+            "displayName": "wildfly_datasources_pool_max_wait_time",
+            "tags": [
+                [
+                    "data_source=ExampleDS"
+                ]
+            ]
+        },
+        "wildfly_datasources_pool_timed_out": {
+            "unit": "none",
+            "type": "gauge",
+            "description": "The timed out count",
+            "displayName": "wildfly_datasources_pool_timed_out",
+            "tags": [
+                [
+                    "data_source=ExampleDS"
+                ]
+            ]
+        },
+        "wildfly_datasources_pool_total_blocking_time": {
+            "unit": "none",
+            "type": "gauge",
+            "description": "The total blocking time",
+            "displayName": "wildfly_datasources_pool_total_blocking_time",
+            "tags": [
+                [
+                    "data_source=ExampleDS"
+                ]
+            ]
+        },
+        "wildfly_datasources_pool_total_creation_time": {
+            "unit": "none",
+            "type": "gauge",
+            "description": "The total time spent creating physical connections",
+            "displayName": "wildfly_datasources_pool_total_creation_time",
+            "tags": [
+                [
+                    "data_source=ExampleDS"
+                ]
+            ]
+        },
+        "wildfly_datasources_pool_total_get_time": {
+            "unit": "none",
+            "type": "gauge",
+            "description": "The total time spent obtaining physical connections",
+            "displayName": "wildfly_datasources_pool_total_get_time",
+            "tags": [
+                [
+                    "data_source=ExampleDS"
+                ]
+            ]
+        },
+        "wildfly_datasources_pool_total_pool_time": {
+            "unit": "none",
+            "type": "gauge",
+            "description": "The total time spent by physical connections in the pool",
+            "displayName": "wildfly_datasources_pool_total_pool_time",
+            "tags": [
+                [
+                    "data_source=ExampleDS"
+                ]
+            ]
+        },
+        "wildfly_datasources_pool_total_usage_time": {
+            "unit": "none",
+            "type": "gauge",
+            "description": "The total time spent using physical connections",
+            "displayName": "wildfly_datasources_pool_total_usage_time",
+            "tags": [
+                [
+                    "data_source=ExampleDS"
+                ]
+            ]
+        },
+        "wildfly_datasources_pool_wait_count": {
+            "unit": "none",
+            "type": "gauge",
+            "description": "The number of requests that had to wait to obtain a physical connection",
+            "displayName": "wildfly_datasources_pool_wait_count",
+            "tags": [
+                [
+                    "data_source=ExampleDS"
+                ]
+            ]
+        },
+        "wildfly_datasources_pool_xacommit_average_time": {
+            "unit": "none",
+            "type": "gauge",
+            "description": "The average time for a XAResource commit invocation",
+            "displayName": "wildfly_datasources_pool_xacommit_average_time",
+            "tags": [
+                [
+                    "data_source=ExampleDS"
+                ]
+            ]
+        },
+        "wildfly_datasources_pool_xacommit_count": {
+            "unit": "none",
+            "type": "gauge",
+            "description": "The number of XAResource commit invocations",
+            "displayName": "wildfly_datasources_pool_xacommit_count",
+            "tags": [
+                [
+                    "data_source=ExampleDS"
+                ]
+            ]
+        },
+        "wildfly_datasources_pool_xacommit_max_time": {
+            "unit": "none",
+            "type": "gauge",
+            "description": "The maximum time for a XAResource commit invocation",
+            "displayName": "wildfly_datasources_pool_xacommit_max_time",
+            "tags": [
+                [
+                    "data_source=ExampleDS"
+                ]
+            ]
+        },
+        "wildfly_datasources_pool_xacommit_total_time": {
+            "unit": "none",
+            "type": "gauge",
+            "description": "The total time for all XAResource commit invocations",
+            "displayName": "wildfly_datasources_pool_xacommit_total_time",
+            "tags": [
+                [
+                    "data_source=ExampleDS"
+                ]
+            ]
+        },
+        "wildfly_datasources_pool_xaend_average_time": {
+            "unit": "none",
+            "type": "gauge",
+            "description": "The average time for a XAResource end invocation",
+            "displayName": "wildfly_datasources_pool_xaend_average_time",
+            "tags": [
+                [
+                    "data_source=ExampleDS"
+                ]
+            ]
+        },
+        "wildfly_datasources_pool_xaend_count": {
+            "unit": "none",
+            "type": "gauge",
+            "description": "The number of XAResource end invocations",
+            "displayName": "wildfly_datasources_pool_xaend_count",
+            "tags": [
+                [
+                    "data_source=ExampleDS"
+                ]
+            ]
+        },
+        "wildfly_datasources_pool_xaend_max_time": {
+            "unit": "none",
+            "type": "gauge",
+            "description": "The maximum time for a XAResource end invocation",
+            "displayName": "wildfly_datasources_pool_xaend_max_time",
+            "tags": [
+                [
+                    "data_source=ExampleDS"
+                ]
+            ]
+        },
+        "wildfly_datasources_pool_xaend_total_time": {
+            "unit": "none",
+            "type": "gauge",
+            "description": "The total time for all XAResource end invocations",
+            "displayName": "wildfly_datasources_pool_xaend_total_time",
+            "tags": [
+                [
+                    "data_source=ExampleDS"
+                ]
+            ]
+        },
+        "wildfly_datasources_pool_xaforget_average_time": {
+            "unit": "none",
+            "type": "gauge",
+            "description": "The average time for a XAResource forget invocation",
+            "displayName": "wildfly_datasources_pool_xaforget_average_time",
+            "tags": [
+                [
+                    "data_source=ExampleDS"
+                ]
+            ]
+        },
+        "wildfly_datasources_pool_xaforget_count": {
+            "unit": "none",
+            "type": "gauge",
+            "description": "The number of XAResource forget invocations",
+            "displayName": "wildfly_datasources_pool_xaforget_count",
+            "tags": [
+                [
+                    "data_source=ExampleDS"
+                ]
+            ]
+        },
+        "wildfly_datasources_pool_xaforget_max_time": {
+            "unit": "none",
+            "type": "gauge",
+            "description": "The maximum time for a XAResource forget invocation",
+            "displayName": "wildfly_datasources_pool_xaforget_max_time",
+            "tags": [
+                [
+                    "data_source=ExampleDS"
+                ]
+            ]
+        },
+        "wildfly_datasources_pool_xaforget_total_time": {
+            "unit": "none",
+            "type": "gauge",
+            "description": "The total time for all XAResource forget invocations",
+            "displayName": "wildfly_datasources_pool_xaforget_total_time",
+            "tags": [
+                [
+                    "data_source=ExampleDS"
+                ]
+            ]
+        },
+        "wildfly_datasources_pool_xaprepare_average_time": {
+            "unit": "none",
+            "type": "gauge",
+            "description": "The average time for a XAResource prepare invocation",
+            "displayName": "wildfly_datasources_pool_xaprepare_average_time",
+            "tags": [
+                [
+                    "data_source=ExampleDS"
+                ]
+            ]
+        },
+        "wildfly_datasources_pool_xaprepare_count": {
+            "unit": "none",
+            "type": "gauge",
+            "description": "The number of XAResource prepare invocations",
+            "displayName": "wildfly_datasources_pool_xaprepare_count",
+            "tags": [
+                [
+                    "data_source=ExampleDS"
+                ]
+            ]
+        },
+        "wildfly_datasources_pool_xaprepare_max_time": {
+            "unit": "none",
+            "type": "gauge",
+            "description": "The maximum time for a XAResource prepare invocation",
+            "displayName": "wildfly_datasources_pool_xaprepare_max_time",
+            "tags": [
+                [
+                    "data_source=ExampleDS"
+                ]
+            ]
+        },
+        "wildfly_datasources_pool_xaprepare_total_time": {
+            "unit": "none",
+            "type": "gauge",
+            "description": "The total time for all XAResource prepare invocations",
+            "displayName": "wildfly_datasources_pool_xaprepare_total_time",
+            "tags": [
+                [
+                    "data_source=ExampleDS"
+                ]
+            ]
+        },
+        "wildfly_datasources_pool_xarecover_average_time": {
+            "unit": "none",
+            "type": "gauge",
+            "description": "The average time for a XAResource recover invocation",
+            "displayName": "wildfly_datasources_pool_xarecover_average_time",
+            "tags": [
+                [
+                    "data_source=ExampleDS"
+                ]
+            ]
+        },
+        "wildfly_datasources_pool_xarecover_count": {
+            "unit": "none",
+            "type": "gauge",
+            "description": "The number of XAResource recover invocations",
+            "displayName": "wildfly_datasources_pool_xarecover_count",
+            "tags": [
+                [
+                    "data_source=ExampleDS"
+                ]
+            ]
+        },
+        "wildfly_datasources_pool_xarecover_max_time": {
+            "unit": "none",
+            "type": "gauge",
+            "description": "The maximum time for a XAResource recover invocation",
+            "displayName": "wildfly_datasources_pool_xarecover_max_time",
+            "tags": [
+                [
+                    "data_source=ExampleDS"
+                ]
+            ]
+        },
+        "wildfly_datasources_pool_xarecover_total_time": {
+            "unit": "none",
+            "type": "gauge",
+            "description": "The total time for all XAResource recover invocations",
+            "displayName": "wildfly_datasources_pool_xarecover_total_time",
+            "tags": [
+                [
+                    "data_source=ExampleDS"
+                ]
+            ]
+        },
+        "wildfly_datasources_pool_xarollback_average_time": {
+            "unit": "none",
+            "type": "gauge",
+            "description": "The average time for a XAResource rollback invocation",
+            "displayName": "wildfly_datasources_pool_xarollback_average_time",
+            "tags": [
+                [
+                    "data_source=ExampleDS"
+                ]
+            ]
+        },
+        "wildfly_datasources_pool_xarollback_count": {
+            "unit": "none",
+            "type": "gauge",
+            "description": "The number of XAResource rollback invocations",
+            "displayName": "wildfly_datasources_pool_xarollback_count",
+            "tags": [
+                [
+                    "data_source=ExampleDS"
+                ]
+            ]
+        },
+        "wildfly_datasources_pool_xarollback_max_time": {
+            "unit": "none",
+            "type": "gauge",
+            "description": "The maximum time for a XAResource rollback invocation",
+            "displayName": "wildfly_datasources_pool_xarollback_max_time",
+            "tags": [
+                [
+                    "data_source=ExampleDS"
+                ]
+            ]
+        },
+        "wildfly_datasources_pool_xarollback_total_time": {
+            "unit": "none",
+            "type": "gauge",
+            "description": "The total time for all XAResource rollback invocations",
+            "displayName": "wildfly_datasources_pool_xarollback_total_time",
+            "tags": [
+                [
+                    "data_source=ExampleDS"
+                ]
+            ]
+        },
+        "wildfly_datasources_pool_xastart_average_time": {
+            "unit": "none",
+            "type": "gauge",
+            "description": "The average time for a XAResource start invocation",
+            "displayName": "wildfly_datasources_pool_xastart_average_time",
+            "tags": [
+                [
+                    "data_source=ExampleDS"
+                ]
+            ]
+        },
+        "wildfly_datasources_pool_xastart_count": {
+            "unit": "none",
+            "type": "gauge",
+            "description": "The number of XAResource start invocations",
+            "displayName": "wildfly_datasources_pool_xastart_count",
+            "tags": [
+                [
+                    "data_source=ExampleDS"
+                ]
+            ]
+        },
+        "wildfly_datasources_pool_xastart_max_time": {
+            "unit": "none",
+            "type": "gauge",
+            "description": "The maximum time for a XAResource start invocation",
+            "displayName": "wildfly_datasources_pool_xastart_max_time",
+            "tags": [
+                [
+                    "data_source=ExampleDS"
+                ]
+            ]
+        },
+        "wildfly_datasources_pool_xastart_total_time": {
+            "unit": "none",
+            "type": "gauge",
+            "description": "The total time for all XAResource start invocations",
+            "displayName": "wildfly_datasources_pool_xastart_total_time",
+            "tags": [
+                [
+                    "data_source=ExampleDS"
+                ]
+            ]
+        },
+        "wildfly_ee_active_thread_count": {
+            "unit": "none",
+            "type": "gauge",
+            "description": "The approximate number of threads that are actively executing tasks.",
+            "displayName": "wildfly_ee_active_thread_count",
+            "tags": [
+                [
+                    "managed_executor_service=default"
+                ],
+                [
+                    "managed_scheduled_executor_service=default"
+                ]
+            ]
+        },
+        "wildfly_ee_completed_task_count": {
+            "unit": "none",
+            "type": "gauge",
+            "description": "The approximate total number of tasks that have completed execution.",
+            "displayName": "wildfly_ee_completed_task_count",
+            "tags": [
+                [
+                    "managed_executor_service=default"
+                ],
+                [
+                    "managed_scheduled_executor_service=default"
+                ]
+            ]
+        },
+        "wildfly_ee_current_queue_size": {
+            "unit": "none",
+            "type": "gauge",
+            "description": "The current size of the executor's task queue.",
+            "displayName": "wildfly_ee_current_queue_size",
+            "tags": [
+                [
+                    "managed_executor_service=default"
+                ],
+                [
+                    "managed_scheduled_executor_service=default"
+                ]
+            ]
+        },
+        "wildfly_ee_hung_thread_count": {
+            "unit": "none",
+            "type": "gauge",
+            "description": "The number of executor threads that are hung.",
+            "displayName": "wildfly_ee_hung_thread_count",
+            "tags": [
+                [
+                    "managed_executor_service=default"
+                ],
+                [
+                    "managed_scheduled_executor_service=default"
+                ]
+            ]
+        },
+        "wildfly_ee_max_thread_count": {
+            "unit": "none",
+            "type": "gauge",
+            "description": "The largest number of executor threads.",
+            "displayName": "wildfly_ee_max_thread_count",
+            "tags": [
+                [
+                    "managed_executor_service=default"
+                ],
+                [
+                    "managed_scheduled_executor_service=default"
+                ]
+            ]
+        },
+        "wildfly_ee_task_count": {
+            "unit": "none",
+            "type": "gauge",
+            "description": "The approximate total number of tasks that have ever been submitted for execution.",
+            "displayName": "wildfly_ee_task_count",
+            "tags": [
+                [
+                    "managed_executor_service=default"
+                ],
+                [
+                    "managed_scheduled_executor_service=default"
+                ]
+            ]
+        },
+        "wildfly_ee_thread_count": {
+            "unit": "none",
+            "type": "gauge",
+            "description": "The current number of executor threads.",
+            "displayName": "wildfly_ee_thread_count",
+            "tags": [
+                [
+                    "managed_executor_service=default"
+                ],
+                [
+                    "managed_scheduled_executor_service=default"
+                ]
+            ]
+        },
+        "wildfly_ejb3_active_count": {
+            "unit": "none",
+            "type": "gauge",
+            "description": "The approximate number of threads that are actively executing tasks.",
+            "displayName": "wildfly_ejb3_active_count",
+            "tags": [
+                [
+                    "thread_pool=default"
+                ]
+            ]
+        },
+        "wildfly_ejb3_completed_task_count": {
+            "unit": "none",
+            "type": "gauge",
+            "description": "The approximate total number of tasks that have completed execution.",
+            "displayName": "wildfly_ejb3_completed_task_count",
+            "tags": [
+                [
+                    "thread_pool=default"
+                ]
+            ]
+        },
+        "wildfly_ejb3_current_thread_count": {
+            "unit": "none",
+            "type": "gauge",
+            "description": "The current number of threads in the pool.",
+            "displayName": "wildfly_ejb3_current_thread_count",
+            "tags": [
+                [
+                    "thread_pool=default"
+                ]
+            ]
+        },
+        "wildfly_ejb3_largest_thread_count": {
+            "unit": "none",
+            "type": "gauge",
+            "description": "The largest number of threads that have ever simultaneously been in the pool.",
+            "displayName": "wildfly_ejb3_largest_thread_count",
+            "tags": [
+                [
+                    "thread_pool=default"
+                ]
+            ]
+        },
+        "wildfly_ejb3_queue_size": {
+            "unit": "none",
+            "type": "gauge",
+            "description": "The queue size.",
+            "displayName": "wildfly_ejb3_queue_size",
+            "tags": [
+                [
+                    "thread_pool=default"
+                ]
+            ]
+        },
+        "wildfly_ejb3_rejected_count": {
+            "unit": "none",
+            "type": "gauge",
+            "description": "The number of tasks that have been rejected.",
+            "displayName": "wildfly_ejb3_rejected_count",
+            "tags": [
+                [
+                    "thread_pool=default"
+                ]
+            ]
+        },
+        "wildfly_ejb3_task_count": {
+            "unit": "none",
+            "type": "gauge",
+            "description": "The approximate total number of tasks that have ever been scheduled for execution.",
+            "displayName": "wildfly_ejb3_task_count",
+            "tags": [
+                [
+                    "thread_pool=default"
+                ]
+            ]
+        },
+        "wildfly_io_busy_task_thread_count": {
+            "unit": "none",
+            "type": "gauge",
+            "description": "An estimate of busy threads in the task worker thread pool",
+            "displayName": "wildfly_io_busy_task_thread_count",
+            "tags": [
+                [
+                    "worker=default"
+                ]
+            ]
+        },
+        "wildfly_io_core_pool_size": {
+            "unit": "none",
+            "type": "gauge",
+            "description": "Minimum number of threads to keep in the underlying thread pool even if they are idle. Threads over this limit will be terminated over time specified by task-keepalive attribute.",
+            "displayName": "wildfly_io_core_pool_size",
+            "tags": [
+                [
+                    "worker=default"
+                ]
+            ]
+        },
+        "wildfly_io_io_thread_count": {
+            "unit": "none",
+            "type": "gauge",
+            "description": "I/O thread count",
+            "displayName": "wildfly_io_io_thread_count",
+            "tags": [
+                [
+                    "worker=default"
+                ]
+            ]
+        },
+        "wildfly_io_max_pool_size": {
+            "unit": "none",
+            "type": "gauge",
+            "description": "The maximum number of threads to allow in the thread pool. Depending on implementation, when this limit is reached, tasks which cannot be queued may be rejected.",
+            "displayName": "wildfly_io_max_pool_size",
+            "tags": [
+                [
+                    "worker=default"
+                ]
+            ]
+        },
+        "wildfly_io_queue_size": {
+            "unit": "none",
+            "type": "gauge",
+            "description": "An estimate of the number of tasks in the worker queue.",
+            "displayName": "wildfly_io_queue_size",
+            "tags": [
+                [
+                    "worker=default"
+                ]
+            ]
+        },
+        "wildfly_jca_current_thread_count": {
+            "unit": "none",
+            "type": "gauge",
+            "description": "The current number of threads in the pool.",
+            "displayName": "wildfly_jca_current_thread_count",
+            "tags": [
+                [
+                    "long_running_threads=default",
+                    "workmanager=default"
+                ],
+                [
+                    "short_running_threads=default",
+                    "workmanager=default"
+                ]
+            ]
+        },
+        "wildfly_jca_largest_thread_count": {
+            "unit": "none",
+            "type": "gauge",
+            "description": "The largest number of threads that have ever simultaneously been in the pool.",
+            "displayName": "wildfly_jca_largest_thread_count",
+            "tags": [
+                [
+                    "long_running_threads=default",
+                    "workmanager=default"
+                ],
+                [
+                    "short_running_threads=default",
+                    "workmanager=default"
+                ]
+            ]
+        },
+        "wildfly_jca_local_dowork_accepted": {
+            "unit": "none",
+            "type": "gauge",
+            "description": "Number of doWork calls accepted",
+            "displayName": "wildfly_jca_local_dowork_accepted",
+            "tags": [
+                [
+                    "workmanager=default"
+                ]
+            ]
+        },
+        "wildfly_jca_local_dowork_rejected": {
+            "unit": "none",
+            "type": "gauge",
+            "description": "Number of doWork calls rejected",
+            "displayName": "wildfly_jca_local_dowork_rejected",
+            "tags": [
+                [
+                    "workmanager=default"
+                ]
+            ]
+        },
+        "wildfly_jca_local_schedulework_accepted": {
+            "unit": "none",
+            "type": "gauge",
+            "description": "Number of scheduleWork calls accepted",
+            "displayName": "wildfly_jca_local_schedulework_accepted",
+            "tags": [
+                [
+                    "workmanager=default"
+                ]
+            ]
+        },
+        "wildfly_jca_local_schedulework_rejected": {
+            "unit": "none",
+            "type": "gauge",
+            "description": "Number of scheduleWork calls rejected",
+            "displayName": "wildfly_jca_local_schedulework_rejected",
+            "tags": [
+                [
+                    "workmanager=default"
+                ]
+            ]
+        },
+        "wildfly_jca_local_startwork_accepted": {
+            "unit": "none",
+            "type": "gauge",
+            "description": "Number of startWork calls accepted",
+            "displayName": "wildfly_jca_local_startwork_accepted",
+            "tags": [
+                [
+                    "workmanager=default"
+                ]
+            ]
+        },
+        "wildfly_jca_local_startwork_rejected": {
+            "unit": "none",
+            "type": "gauge",
+            "description": "Number of startWork calls rejected",
+            "displayName": "wildfly_jca_local_startwork_rejected",
+            "tags": [
+                [
+                    "workmanager=default"
+                ]
+            ]
+        },
+        "wildfly_jca_local_work_active": {
+            "unit": "none",
+            "type": "gauge",
+            "description": "Number of current active works",
+            "displayName": "wildfly_jca_local_work_active",
+            "tags": [
+                [
+                    "workmanager=default"
+                ]
+            ]
+        },
+        "wildfly_jca_local_work_failed": {
+            "unit": "none",
+            "type": "gauge",
+            "description": "Number of works failed",
+            "displayName": "wildfly_jca_local_work_failed",
+            "tags": [
+                [
+                    "workmanager=default"
+                ]
+            ]
+        },
+        "wildfly_jca_local_work_successful": {
+            "unit": "none",
+            "type": "gauge",
+            "description": "Number of works completed successfully",
+            "displayName": "wildfly_jca_local_work_successful",
+            "tags": [
+                [
+                    "workmanager=default"
+                ]
+            ]
+        },
+        "wildfly_jca_queue_size": {
+            "unit": "none",
+            "type": "gauge",
+            "description": "The queue size.",
+            "displayName": "wildfly_jca_queue_size",
+            "tags": [
+                [
+                    "long_running_threads=default",
+                    "workmanager=default"
+                ],
+                [
+                    "short_running_threads=default",
+                    "workmanager=default"
+                ]
+            ]
+        },
+        "wildfly_jca_rejected_count": {
+            "unit": "none",
+            "type": "gauge",
+            "description": "The number of tasks that have been passed to the handoff-executor (if one is specified) or discarded.",
+            "displayName": "wildfly_jca_rejected_count",
+            "tags": [
+                [
+                    "long_running_threads=default",
+                    "workmanager=default"
+                ],
+                [
+                    "short_running_threads=default",
+                    "workmanager=default"
+                ]
+            ]
+        },
+        "wildfly_request_controller_active_requests": {
+            "unit": "none",
+            "type": "gauge",
+            "description": "The number of requests that are currently running in the server",
+            "displayName": "wildfly_request_controller_active_requests",
+            "tags": [
+                [
+                ]
+            ]
+        },
+        "wildfly_transactions_average_commit_time": {
+            "unit": "nanoseconds",
+            "type": "gauge",
+            "description": "The average time of transaction commit, measured from the moment the client calls commit until the transaction manager determines that the commit attempt was successful.",
+            "displayName": "wildfly_transactions_average_commit_time",
+            "tags": [
+                [
+                ]
+            ]
+        },
+        "wildfly_transactions_number_of_aborted_transactions": {
+            "unit": "none",
+            "type": "counter",
+            "description": "The number of aborted (i.e. rolledback) transactions.",
+            "displayName": "wildfly_transactions_number_of_aborted_transactions",
+            "tags": [
+                [
+                ]
+            ]
+        },
+        "wildfly_transactions_number_of_application_rollbacks": {
+            "unit": "none",
+            "type": "counter",
+            "description": "The number of transactions that have been rolled back by application request. This includes those that timeout, since the timeout behavior is considered an attribute of the application configuration.",
+            "displayName": "wildfly_transactions_number_of_application_rollbacks",
+            "tags": [
+                [
+                ]
+            ]
+        },
+        "wildfly_transactions_number_of_committed_transactions": {
+            "unit": "none",
+            "type": "counter",
+            "description": "The number of committed transactions.",
+            "displayName": "wildfly_transactions_number_of_committed_transactions",
+            "tags": [
+                [
+                ]
+            ]
+        },
+        "wildfly_transactions_number_of_heuristics": {
+            "unit": "none",
+            "type": "counter",
+            "description": "The number of transactions which have terminated with heuristic outcomes.",
+            "displayName": "wildfly_transactions_number_of_heuristics",
+            "tags": [
+                [
+                ]
+            ]
+        },
+        "wildfly_transactions_number_of_inflight_transactions": {
+            "unit": "none",
+            "type": "gauge",
+            "description": "The number of transactions that have begun but not yet terminated.",
+            "displayName": "wildfly_transactions_number_of_inflight_transactions",
+            "tags": [
+                [
+                ]
+            ]
+        },
+        "wildfly_transactions_number_of_nested_transactions": {
+            "unit": "none",
+            "type": "counter",
+            "description": "The total number of nested (sub) transactions created.",
+            "displayName": "wildfly_transactions_number_of_nested_transactions",
+            "tags": [
+                [
+                ]
+            ]
+        },
+        "wildfly_transactions_number_of_resource_rollbacks": {
+            "unit": "none",
+            "type": "counter",
+            "description": "The number of transactions that rolled back due to resource (participant) failure.",
+            "displayName": "wildfly_transactions_number_of_resource_rollbacks",
+            "tags": [
+                [
+                ]
+            ]
+        },
+        "wildfly_transactions_number_of_system_rollbacks": {
+            "unit": "none",
+            "type": "counter",
+            "description": "The number of transactions that have been rolled back due to internal system errors.",
+            "displayName": "wildfly_transactions_number_of_system_rollbacks",
+            "tags": [
+                [
+                ]
+            ]
+        },
+        "wildfly_transactions_number_of_timed_out_transactions": {
+            "unit": "none",
+            "type": "counter",
+            "description": "The number of transactions that have rolled back due to timeout.",
+            "displayName": "wildfly_transactions_number_of_timed_out_transactions",
+            "tags": [
+                [
+                ]
+            ]
+        },
+        "wildfly_transactions_number_of_transactions": {
+            "unit": "none",
+            "type": "counter",
+            "description": "The total number of transactions (top-level and nested) created",
+            "displayName": "wildfly_transactions_number_of_transactions",
+            "tags": [
+                [
+                ]
+            ]
+        },
+        "wildfly_undertow_active_sessions": {
+            "unit": "none",
+            "type": "gauge",
+            "description": "Number of active sessions",
+            "displayName": "wildfly_undertow_active_sessions",
+            "tags": [
+                [
+                    "deployment=EnterpriseHelloWorld.ear",
+                    "subdeployment=HelloWorldFirst.war"
+                ],
+                [
+                    "deployment=EnterpriseHelloWorld.ear",
+                    "subdeployment=HelloWorldSecond.war"
+                ]
+            ]
+        },
+        "wildfly_undertow_bytes_received": {
+            "unit": "bytes",
+            "type": "counter",
+            "description": "The number of bytes that have been received by this listener",
+            "displayName": "wildfly_undertow_bytes_received",
+            "tags": [
+                [
+                    "http_listener=default",
+                    "server=default-server"
+                ],
+                [
+                    "https_listener=https",
+                    "server=default-server"
+                ]
+            ]
+        },
+        "wildfly_undertow_bytes_sent": {
+            "unit": "bytes",
+            "type": "counter",
+            "description": "The number of bytes that have been sent out on this listener",
+            "displayName": "wildfly_undertow_bytes_sent",
+            "tags": [
+                [
+                    "http_listener=default",
+                    "server=default-server"
+                ],
+                [
+                    "https_listener=https",
+                    "server=default-server"
+                ]
+            ]
+        },
+        "wildfly_undertow_error_count": {
+            "unit": "none",
+            "type": "counter",
+            "description": "The number of 500 responses that have been sent by this listener",
+            "displayName": "wildfly_undertow_error_count",
+            "tags": [
+                [
+                    "http_listener=default",
+                    "server=default-server"
+                ],
+                [
+                    "https_listener=https",
+                    "server=default-server"
+                ]
+            ]
+        },
+        "wildfly_undertow_expired_sessions": {
+            "unit": "none",
+            "type": "counter",
+            "description": "Number of sessions that have expired",
+            "displayName": "wildfly_undertow_expired_sessions",
+            "tags": [
+                [
+                    "deployment=EnterpriseHelloWorld.ear",
+                    "subdeployment=HelloWorldFirst.war"
+                ],
+                [
+                    "deployment=EnterpriseHelloWorld.ear",
+                    "subdeployment=HelloWorldSecond.war"
+                ]
+            ]
+        },
+        "wildfly_undertow_highest_session_count": {
+            "unit": "none",
+            "type": "gauge",
+            "description": "The maximum number of sessions that have been active simultaneously",
+            "displayName": "wildfly_undertow_highest_session_count",
+            "tags": [
+                [
+                    "deployment=EnterpriseHelloWorld.ear",
+                    "subdeployment=HelloWorldFirst.war"
+                ],
+                [
+                    "deployment=EnterpriseHelloWorld.ear",
+                    "subdeployment=HelloWorldSecond.war"
+                ]
+            ]
+        },
+        "wildfly_undertow_max_active_sessions": {
+            "unit": "none",
+            "type": "gauge",
+            "description": "The maximum allowed number of concurrent sessions that this session manager supports",
+            "displayName": "wildfly_undertow_max_active_sessions",
+            "tags": [
+                [
+                    "deployment=EnterpriseHelloWorld.ear",
+                    "subdeployment=HelloWorldFirst.war"
+                ],
+                [
+                    "deployment=EnterpriseHelloWorld.ear",
+                    "subdeployment=HelloWorldSecond.war"
+                ]
+            ]
+        },
+        "wildfly_undertow_max_processing_time": {
+            "unit": "nanoseconds",
+            "type": "gauge",
+            "description": "The maximum processing time taken by a request on this listener",
+            "displayName": "wildfly_undertow_max_processing_time",
+            "tags": [
+                [
+                    "http_listener=default",
+                    "server=default-server"
+                ],
+                [
+                    "https_listener=https",
+                    "server=default-server"
+                ]
+            ]
+        },
+        "wildfly_undertow_processing_time": {
+            "unit": "nanoseconds",
+            "type": "counter",
+            "description": "The total processing time of all requests handed by this listener",
+            "displayName": "wildfly_undertow_processing_time",
+            "tags": [
+                [
+                    "http_listener=default",
+                    "server=default-server"
+                ],
+                [
+                    "https_listener=https",
+                    "server=default-server"
+                ]
+            ]
+        },
+        "wildfly_undertow_rejected_sessions": {
+            "unit": "none",
+            "type": "counter",
+            "description": "Number of rejected sessions",
+            "displayName": "wildfly_undertow_rejected_sessions",
+            "tags": [
+                [
+                    "deployment=EnterpriseHelloWorld.ear",
+                    "subdeployment=HelloWorldFirst.war"
+                ],
+                [
+                    "deployment=EnterpriseHelloWorld.ear",
+                    "subdeployment=HelloWorldSecond.war"
+                ]
+            ]
+        },
+        "wildfly_undertow_request_count": {
+            "unit": "none",
+            "type": "counter",
+            "description": "The number of requests this listener has served",
+            "displayName": "wildfly_undertow_request_count",
+            "tags": [
+                [
+                    "http_listener=default",
+                    "server=default-server"
+                ],
+                [
+                    "https_listener=https",
+                    "server=default-server"
+                ]
+            ]
+        },
+        "wildfly_undertow_session_avg_alive_time": {
+            "unit": "seconds",
+            "type": "gauge",
+            "description": "Average time that expired sessions had been alive",
+            "displayName": "wildfly_undertow_session_avg_alive_time",
+            "tags": [
+                [
+                    "deployment=EnterpriseHelloWorld.ear",
+                    "subdeployment=HelloWorldFirst.war"
+                ],
+                [
+                    "deployment=EnterpriseHelloWorld.ear",
+                    "subdeployment=HelloWorldSecond.war"
+                ]
+            ]
+        },
+        "wildfly_undertow_session_max_alive_time": {
+            "unit": "seconds",
+            "type": "gauge",
+            "description": "The longest time that an expired session had been alive",
+            "displayName": "wildfly_undertow_session_max_alive_time",
+            "tags": [
+                [
+                    "deployment=EnterpriseHelloWorld.ear",
+                    "subdeployment=HelloWorldFirst.war"
+                ],
+                [
+                    "deployment=EnterpriseHelloWorld.ear",
+                    "subdeployment=HelloWorldSecond.war"
+                ]
+            ]
+        },
+        "wildfly_undertow_sessions_created": {
+            "unit": "none",
+            "type": "counter",
+            "description": "Total sessions created",
+            "displayName": "wildfly_undertow_sessions_created",
+            "tags": [
+                [
+                    "deployment=EnterpriseHelloWorld.ear",
+                    "subdeployment=HelloWorldFirst.war"
+                ],
+                [
+                    "deployment=EnterpriseHelloWorld.ear",
+                    "subdeployment=HelloWorldSecond.war"
+                ]
+            ]
+        }
+    },
+    "application": {
+    }
+}

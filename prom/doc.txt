@@ -1,0 +1,3 @@
+
+#Generate automated Grafana metrics dashboards for MicroProfile apps
+https://developers.redhat.com/blog/2020/07/10/generate-automated-grafana-metrics-dashboards-for-microprofile-apps/
