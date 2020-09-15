@@ -1,0 +1,9 @@
+- targets:
+  - https://www.itau.com.br/
+  - https://www.itau.com.br/conta-corrente
+  labels:
+    group: web
+- targets:
+  - https://internetnc1.itau.com.br/router-app/router
+  labels:
+    group: mono

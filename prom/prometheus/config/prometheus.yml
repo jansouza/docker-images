@@ -32,3 +32,30 @@ scrape_configs:
     # scheme defaults to 'http'.
     static_configs:
     - targets: ['192.168.122.10:9990']
+
+  - job_name: 'spring-boot1'
+    metrics_path: /actuator/prometheus
+    # scheme defaults to 'http'.
+    static_configs:
+    - targets: ['172.17.0.1:8080']
+
+  - job_name: 'spring-boot2'
+    metrics_path: /actuator/prometheus
+    # scheme defaults to 'http'.
+    static_configs:
+    - targets: ['172.17.0.1:8081']
+
+  - job_name: 'blackbox'
+    metrics_path: /probe
+    params:
+      module: [http_2xx]  # Look for a HTTP 200 response.
+    file_sd_configs:
+    - files:
+       - "/etc/prometheus/blackbox_targets.yml"
+    relabel_configs:
+      - source_labels: [__address__]
+        target_label: __param_target
+      - source_labels: [__param_target]
+        target_label: instance
+      - target_label: __address__
+        replacement: 172.17.0.1:9115  # The blackbox exporter's real hostname:port.
